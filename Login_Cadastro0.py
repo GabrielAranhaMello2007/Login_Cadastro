@@ -1,5 +1,7 @@
 # Login_Cadastro
 # Um programa em que é possível fazer Login(Usa outro arquivo como banco de dados) e Cadastro
+# Para fazer a instalação do "PySimpleGui"
+# Copiei "pip install PySimpleGUI" e logo em seguida cole isso no terminal do Python
 
 import PySimpleGUI as sg
 from Banco_de_dados import *
