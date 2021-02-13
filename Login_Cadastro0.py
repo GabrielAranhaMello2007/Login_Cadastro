@@ -1,7 +1,7 @@
 # Login_Cadastro
 # Um programa em que é possível fazer Login(Usa outro arquivo como banco de dados) e Cadastro
 # Para fazer a instalação do "PySimpleGui"
-# Copiei "pip install PySimpleGUI" e logo em seguida cole isso no terminal do Python
+# Copie "pip install PySimpleGUI" e logo em seguida cole isso no terminal do Python
 
 import PySimpleGUI as sg
 from Banco_de_dados import *
@@ -37,13 +37,10 @@ while True:
 
     window, event, values = sg.read_all_windows()
 
-    if window == janela1 and event == sg.WINDOW_CLOSED:
+    if event == sg.WINDOW_CLOSED:
         break
 
-    if window == janela2 and event == sg.WINDOW_CLOSED:
-        break
-
-    if window == janela1 and event == 'Entrar':
+    if event == 'Entrar':
 
         if values['login'] in users:
 
@@ -66,12 +63,12 @@ while True:
             print(f'Nenhuma conta registrada com "{values["login"]}"')
             print('-' * 60)
 
-    if window == janela1 and event == 'Cadastro':
+    if event == 'Cadastro':
 
         janela1.hide()
         janela2 = janela_cadastro()
 
-    if window == janela2 and event == 'cnv':
+    if event == 'cnv':
 
         if values['login'] not in users:
 
@@ -93,7 +90,7 @@ while True:
             print('Usuário já cadastrado')
             print('-' * 60)
 
-    if window == janela2 and event == 'voltar':
+    if event == 'voltar':
         janela2.hide()
         janela1.un_hide()
 
